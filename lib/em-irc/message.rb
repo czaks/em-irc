@@ -72,7 +72,7 @@ module EM::P::IRC
       params = self.params.dup
       if params.size > 0 and has_data != false
         text = params.pop
-        if text =~ / / or has_data == true
+        if text =~ / |^:/ or has_data == true
           text = ":" + text
         end
         params.push text
